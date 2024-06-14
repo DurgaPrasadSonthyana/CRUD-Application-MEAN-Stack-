@@ -1,0 +1,40 @@
+<div class="shadow border p-4">
+    <h5 class="text-xl font-bold" *ngIf="editUserId">Update User</h5>
+    <h5 class="text-xl font-bold" *ngIf="!editUserId">Add User</h5>
+
+   <form [formGroup]="userform">
+    <div class="flex flex-wrap">
+
+        <mat-form-field class="w-full">
+            <mat-label>Name</mat-label>
+            <input matInput type="text" formControlName="name">
+        </mat-form-field>   
+
+        <mat-form-field class="w-full">
+            <mat-label>Age</mat-label>
+            <input matInput type="number" formControlName="age">
+        </mat-form-field>  
+
+        <mat-form-field class="w-full">
+            <mat-label>EMail</mat-label>
+            <input matInput type="text" formControlName="email">
+        </mat-form-field>  
+
+        <mat-form-field class="w-full">
+            <mat-label>Address</mat-label>
+            <input matInput type="text" formControlName="address">
+        </mat-form-field> 
+
+        <mat-form-field class="w-full">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" formControlName="password">
+        </mat-form-field>  
+
+    </div>
+
+    <div class="flex justify-center">
+        <button mat-raised-button id="button" *ngIf="editUserId" (click)="updateUser()">Update</button>
+        <button mat-raised-button id="button" *ngIf="!editUserId" (click)="addUser()">Add</button>
+    </div>
+   </form>
+</div>
